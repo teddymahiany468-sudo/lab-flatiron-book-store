@@ -55,9 +55,9 @@ const bookTitle = document.createElement('h3');
 const bookAuthor = document.createElement('p');
 const bookImage = document.createElement('img');
 
-bookTitle.textContent = book.title;
-bookAuthor.textContent = book.author;
-bookImage.src = book.imageUrl;
+bookTitle.textContent = 'Eloquent JavaScript: A Modern Introduction to Programming';
+bookAuthor.textContent = 'Jon Duckett';
+bookImage.src = book.imageUrl; 'https://images-na.ssl-images-amazon.com/images/I/31SRWF+LkKL._SX398_BO1,204,203,200_.jpg'
 
 bookContainer.appendChild(bookTitle);
 bookContainer.appendChild(bookAuthor);
