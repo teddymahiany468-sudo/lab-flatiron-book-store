@@ -44,6 +44,11 @@ const bookStore = {
 }
 
 // Write your code here!
+const placeholder = document.getElementById('delete-this');
+if (placeholder) {
+    placeholder.remove();
+}
+
 const header = document.getElementById('header');
 const bookStoreTitle = document.getElementById('header');
 bookStoreTitle.textContent = bookStore.name;
