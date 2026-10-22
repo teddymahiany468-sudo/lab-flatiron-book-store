@@ -44,29 +44,33 @@ const bookStore = {
 }
 
 // Write your code here!
+
+
 const placeholder = document.getElementById('delete-this');
+
 if (placeholder) {
     placeholder.remove();
 }
 
 const header = document.getElementById('header');
-const bookStoreTitle = document.getElementById('header');
-bookStoreTitle.textContent = bookStore.name;
+header.textContent = bookStore.name;
+
+const bookList = document.getElementById('book-list');
 
 bookStore.books.forEach(book => {
+    const bookContainer = document.createElement('li');
+    const bookTitle = document.createElement('h3');
+    const bookAuthor = document.createElement('p');
+    const bookImage = document.createElement('img');
 
-const bookContainer = document.createElement('li');
-const bookTitle = document.createElement('h3');
-const bookAuthor = document.createElement('p');
-const bookImage = document.createElement('img');
+    bookTitle.textContent = book.title;
+    bookAuthor.textContent = book.author;
+    bookImage.src = book.imageUrl;
+    bookImage.alt = book.title;
 
-bookTitle.textContent = 'Eloquent JavaScript: A Modern Introduction to Programming';
-bookAuthor.textContent = 'Jon Duckett';
-bookImage.src = book.imageUrl; 'https://images-na.ssl-images-amazon.com/images/I/31SRWF+LkKL._SX398_BO1,204,203,200_.jpg'
+    bookContainer.appendChild(bookTitle);
+    bookContainer.appendChild(bookAuthor);
+    bookContainer.appendChild(bookImage);
 
-bookContainer.appendChild(bookTitle);
-bookContainer.appendChild(bookAuthor);
-bookContainer.appendChild(bookImage);
-
-bookList.appendChild(bookContainer);
+    bookList.appendChild(bookContainer);
 });
